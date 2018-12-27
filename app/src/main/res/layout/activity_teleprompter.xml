@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maestoso.teleprompter.TeleprompterActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black">
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:breakStrategy="simple"
+                android:onClick="pauseScrolling"
+                android:text="@string/placeholder"
+                android:textColor="@android:color/white"
+                android:textSize="72sp" />
+
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/teleprompter_overlay"
+                android:onClick="beginScrolling" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:fontFamily="sans-serif"
+                android:text="@string/tap_to_start"
+                android:textSize="36sp"
+                android:paddingLeft="@dimen/tap_to_start_padding"
+                android:paddingRight="@dimen/tap_to_start_padding"
+                android:paddingTop="@dimen/tap_to_start_padding"
+                android:paddingBottom="@dimen/tap_to_start_padding" />
+        </FrameLayout>
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>
