@@ -44,7 +44,7 @@
       <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/maestoso/teleprompter/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
+            <state relative-caret-position="189">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <marker date="1545638495509" expanded="true" signature="1098:1172" ph="..." />
@@ -2857,7 +2857,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32900432" />
       <window_info id="Build Variants" order="2" sideWeight="0.5064935" side_tool="true" weight="0.14507154" />
@@ -2877,7 +2876,7 @@
       <window_info anchor="right" id="Preview" order="3" weight="0.3298887" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32897604" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4935065" visible="true" weight="0.14507154" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49841017" weight="0.2647059" />
@@ -3265,7 +3264,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/maestoso/teleprompter/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
+        <state relative-caret-position="189">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <marker date="1545638495509" expanded="true" signature="1098:1172" ph="..." />
