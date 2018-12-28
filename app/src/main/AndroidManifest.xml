@@ -24,7 +24,10 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name="com.maestoso.teleprompter.SettingsActivity"
-            android:label="@string/title_activity_settings">
+            android:label="@string/title_activity_settings"
+            android:theme="@style/RequiredPreferenceTheme"
+            android:screenOrientation="portrait">
+
         </activity>
     </application>
 

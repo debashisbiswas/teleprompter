@@ -24,7 +24,7 @@
                 android:onClick="pauseScrolling"
                 android:text="@string/placeholder"
                 android:textColor="@android:color/white"
-                android:textSize="72sp" />
+                android:textSize="72sp"/>
 
         </ScrollView>
 
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/black"
-                android:fontFamily="sans-serif"
+                android:fontFamily="sans-serif-light"
                 android:text="@string/tap_to_start"
                 android:textSize="36sp"
                 android:paddingLeft="@dimen/tap_to_start_padding"

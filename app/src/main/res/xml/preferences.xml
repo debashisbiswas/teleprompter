@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v7.preference.PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.preference.PreferenceCategory
+            android:title="@string/pref_header_teleprompter">
 
-        <EditTextPreference
-            android:key="speed"
-            android:title="Scroll Speed"
-            />
+        <android.support.v7.preference.SeekBarPreference
+                android:title="@string/pref_title_scroll_speed"
+                android:key="@string/pref_key_scroll_speed"
+                android:layout_height="wrap_content"
+                android:max="@string/pref_max_scroll_speed"
+                android:defaultValue="@string/pref_default_scroll_speed"/>
 
-</PreferenceScreen>
+        <android.support.v7.preference.SwitchPreferenceCompat
+                android:title="@string/pref_title_padding_switch"
+                android:key="@string/pref_key_padding_switch"
+                android:defaultValue="@string/pref_default_padding_switch"/>
+
+        <com.maestoso.teleprompter.NumberPickerPreference
+                android:title="@string/pref_title_padding_above"
+                android:key="@string/pref_key_padding_above"
+                android:defaultValue="@string/pref_default_padding_above"
+                android:dependency="@string/pref_key_padding_switch"/>
+
+        <com.maestoso.teleprompter.NumberPickerPreference
+                android:title="@string/pref_title_padding_below"
+                android:key="@string/pref_key_padding_below"
+                android:defaultValue="@string/pref_default_padding_below"
+                android:dependency="@string/pref_key_padding_switch"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory
+            android:title="@string/pref_header_font">
+
+        <android.support.v7.preference.ListPreference
+            android:title="@string/pref_title_font_size"
+            android:key="@string/pref_key_font_size"
+            android:entries="@array/pref_font_sizes_labels"
+            android:entryValues="@array/pref_font_sizes_values"
+            android:defaultValue="@string/pref_default_font_size"
+        />
+
+
+    </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>

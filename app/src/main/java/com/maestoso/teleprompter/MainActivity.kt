@@ -3,6 +3,7 @@ package com.maestoso.teleprompter
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(resources.getString(R.string.user_string_extra_key), theUserString)
             startActivity(intent)
         }
+
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

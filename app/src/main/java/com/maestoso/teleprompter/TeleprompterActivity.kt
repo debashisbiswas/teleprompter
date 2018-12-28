@@ -1,5 +1,6 @@
 package com.maestoso.teleprompter
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Bundle
 import android.os.Handler
@@ -20,37 +21,57 @@ class TeleprompterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_teleprompter)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-        text_view.text =
-                "\n\n\n" +
-               intent.extras.getString(resources.getString(R.string.user_string_extra_key)) +
-                "\n\n\n"
-        // TODO: add custom amount of padding
+        val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val thePaddingEnabledSetting = theSharedPreferences.getBoolean(
+                getString(R.string.pref_key_padding_switch), false)
+        var theText = intent.extras.getString(resources.getString(R.string.user_string_extra_key))
+        if( thePaddingEnabledSetting )
+        {
+            val thePaddingAboveSetting = theSharedPreferences.getInt(
+                    getString(R.string.pref_key_padding_above), 0)
+            val thePaddingBelowSetting = theSharedPreferences.getInt(
+                    getString(R.string.pref_key_padding_below), 0)
+            val thePaddingCharacter = "\n"
+
+            val thePaddingAbove = thePaddingCharacter.repeat( thePaddingAboveSetting )
+            val thePaddingBelow = thePaddingCharacter.repeat( thePaddingBelowSetting )
+            theText = thePaddingAbove + theText + thePaddingBelow
+        }
+
+//        val theFontSizeSetting: Float = theSharedPreferences.getString(
+//                getString(R.string.pref_key_font_size), "72").toFloat()
+//
+//        text_view.textSize = theFontSizeSetting
+        text_view.text = theText
         // TODO: Add developer settings to show a placeholder
     }
 
-    fun beginScrolling(aView: View)
-    {
+    fun beginScrolling(aView: View) {
         overlay.visibility = View.INVISIBLE
 
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val theSpeedSetting: Long = prefs.getInt( getString( R.string.scroll_speed_key ), 0 ).toLong()
+        val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val theSpeedSetting = theSharedPreferences.getInt(getString(R.string.pref_key_scroll_speed), 0)
 
-        Log.e( "Debashis", theSpeedSetting.toString())
+        // for future reference: here's how this works
+        // theMaxDelay is the slowest delay. The scroll bar's speed setting is subtracted from that
+        // higher speed setting -> less delay -> faster scroll
+        // scrolling by 1 every call is unnecessarily demanding and causes skipping
+        val theMaxDelay = 25
+        val theScrollAmountPerCall = 3
 
-        val ms : Long = 19 - theSpeedSetting
-        mHandler.postDelayed( object:Runnable {
+        val ms: Long = (theMaxDelay - theSpeedSetting).toLong()
+        mHandler.postDelayed(object : Runnable {
             override fun run() {
-                scroll_view.smoothScrollBy(0, 3)
+                scroll_view.smoothScrollBy(0, theScrollAmountPerCall)
                 mHandler.postDelayed(this, ms)
             }
 
         }, ms)
     }
 
-    fun pauseScrolling(aView: View)
-    {
+    fun pauseScrolling(aView: View) {
         // removes all
-        mHandler.removeCallbacksAndMessages( null )
+        mHandler.removeCallbacksAndMessages(null)
 
         overlay.visibility = View.VISIBLE
     }

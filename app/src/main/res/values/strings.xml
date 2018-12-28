@@ -5,79 +5,59 @@
     <string name="placeholder">Lorem ipsum dolor sit amet consectetur adipiscing elit semper condimentum scelerisque sed, dui rhoncus quam platea velit tempor taciti turpis libero curabitur. Ut at fermentum vehicula erat libero sagittis nisl pulvinar inceptos egestas nisi fusce condimentum taciti, nunc rhoncus pharetra hendrerit convallis dictum duis curae gravida conubia lacinia proin eleifend. Proin a magna mus suscipit turpis primis elementum, dignissim aliquet iaculis integer commodo sociosqu, ridiculus et eu dui tristique auctor.</string>
     <string name="user_string_extra_key">userString</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="tap_to_start">Tap to start</string>
 
     <!-- Strings related to Settings -->
     <string name="action_settings">Settings</string>
 
-    <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
+    <!--
+        format:
+        headers (as in PreferenceCategories) are pref_header_NAME
+        titles of the actual settings: pref_title_NAME
+        keys of those settings: pref_key_NAME
+        default value: pref_default_NAME
+    -->
+    <!-- Teleprompter settings -->
+    <string name="pref_header_teleprompter">Teleprompter</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
+    <string name="pref_title_scroll_speed">Scroll Speed</string>
+    <string name="pref_key_scroll_speed">pref_key_scroll_speed</string>
+    <string name="pref_max_scroll_speed">15</string>
+    <string name="pref_default_scroll_speed">8</string>
+
+    <string name="pref_title_padding_switch">Enable padding around text</string>
+    <string name="pref_key_padding_switch">pref_key_padding_switch</string>
+    <string name="pref_default_padding_switch">false</string>
+
+    <string name="pref_title_padding_above">Padding above text</string>
+    <string name="pref_key_padding_above">pref_key_padding_above</string>
+    <string name="pref_default_padding_above">0</string>
+
+    <string name="pref_title_padding_below">Padding below text</string>
+    <string name="pref_key_padding_below">pref_key_padding_below</string>
+    <string name="pref_default_padding_below">0</string>
 
     <string name="pref_title_display_name">Display name</string>
     <string name="pref_default_display_name">John Smith</string>
 
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
+    <!-- Font settings -->
+    <string name="pref_header_font">Font</string>
+
+    <string name="pref_title_font_size">Font Size</string>
+    <string name="pref_key_font_size">pref_key_font_size</string>
+    <string-array name="pref_font_sizes_values">
         <item>0</item>
-        <item>-1</item>
-    </string-array>
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-
-    <string-array name="list_preference_entry_values">
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
-
-    <string-array name="multi_select_list_preference_default_value" />
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="tap_to_start">Tap to start</string>
-    <string name="scroll_speed_key">speed</string>
+    <string name="pref_default_font_size">2</string>
+    <string-array name="pref_font_sizes_labels">
+        <item>60</item>
+        <item>66</item>
+        <item>72</item>
+        <item>78</item>
+        <item>84</item>
+    </string-array>
 </resources>
