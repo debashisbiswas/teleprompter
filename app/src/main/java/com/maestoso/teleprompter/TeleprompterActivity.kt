@@ -1,12 +1,9 @@
 package com.maestoso.teleprompter
 
-import android.content.SharedPreferences
-import android.content.res.Resources
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_teleprompter.*
@@ -38,10 +35,20 @@ class TeleprompterActivity : AppCompatActivity() {
             theText = thePaddingAbove + theText + thePaddingBelow
         }
 
-//        val theFontSizeSetting: Float = theSharedPreferences.getString(
-//                getString(R.string.pref_key_font_size), "72").toFloat()
-//
-//        text_view.textSize = theFontSizeSetting
+        val theFontSizeSettingIndex: Int = theSharedPreferences.getString(
+                getString(R.string.pref_key_font_size), "-1").toInt()
+
+        val theFontSizeSetting = when(theFontSizeSettingIndex)
+        {
+            0 -> resources.getDimension(R.dimen.font_size_option_0)
+            1 -> resources.getDimension(R.dimen.font_size_option_1)
+            2 -> resources.getDimension(R.dimen.font_size_option_2)
+            3 -> resources.getDimension(R.dimen.font_size_option_3)
+            4 -> resources.getDimension(R.dimen.font_size_option_4)
+            else -> resources.getDimension(R.dimen.font_size_option_2)
+        }
+
+        text_view.textSize = theFontSizeSetting
         text_view.text = theText
         // TODO: Add developer settings to show a placeholder
     }
