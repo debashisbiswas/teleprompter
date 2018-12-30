@@ -2,7 +2,6 @@
     <dimen name="side_margin">16dp</dimen>
     <dimen name="tap_to_start_padding">8dp</dimen>
 
-
     <!-- Font size dimensions: correspond with strings.xml -->
     <dimen name="font_size_option_0">60sp</dimen>
     <dimen name="font_size_option_1">66sp</dimen>
