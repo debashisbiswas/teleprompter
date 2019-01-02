@@ -2,7 +2,6 @@ package com.maestoso.teleprompter
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.v4.app.DialogFragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.preference.Preference
@@ -45,6 +44,7 @@ class SettingsActivity : AppCompatActivity()
 
         override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
             when(key){
+                // TODO: these should be replaced with String resources
                 "pref_scroll_speed_key" -> {
                     // val thePreference = preferenceManager.findPreference(key) as EditTextPreference
                     // thePreference.summary = thePreference.text
