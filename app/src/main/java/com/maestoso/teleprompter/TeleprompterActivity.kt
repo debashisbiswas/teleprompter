@@ -35,25 +35,16 @@ class TeleprompterActivity : AppCompatActivity() {
             theText = thePaddingAbove + theText + thePaddingBelow
         }
 
-        val theFontSizeSettingIndex: Int = theSharedPreferences.getString(
-                getString(R.string.pref_key_font_size), "-1").toInt()
-
-        val theFontSizeSetting = when(theFontSizeSettingIndex)
-        {
-            0 -> resources.getDimension(R.dimen.font_size_option_0)
-            1 -> resources.getDimension(R.dimen.font_size_option_1)
-            2 -> resources.getDimension(R.dimen.font_size_option_2)
-            3 -> resources.getDimension(R.dimen.font_size_option_3)
-            4 -> resources.getDimension(R.dimen.font_size_option_4)
-            else -> resources.getDimension(R.dimen.font_size_option_2)
-        }
+        val theFontSizeSetting = theSharedPreferences.getString(
+                getString(R.string.pref_key_font_size),
+                getString(R.string.pref_default_font_size))
+                .toFloat()
 
         text_view.textSize = theFontSizeSetting
         text_view.text = theText
-        // TODO: Add developer settings to show a placeholder
     }
 
-    fun beginScrolling(aView: View) {
+    fun beginScrolling(@Suppress("UNUSED_PARAMETER") aView: View) {
         overlay.visibility = View.INVISIBLE
 
         val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
@@ -76,7 +67,7 @@ class TeleprompterActivity : AppCompatActivity() {
         }, ms)
     }
 
-    fun pauseScrolling(aView: View) {
+    fun pauseScrolling(@Suppress("UNUSED_PARAMETER") aView: View) {
         // removes all
         mHandler.removeCallbacksAndMessages(null)
 

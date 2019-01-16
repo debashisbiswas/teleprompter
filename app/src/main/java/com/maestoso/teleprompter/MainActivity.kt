@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     // Button onClick functions
 
-    fun onClickPasteFromClipboard(view: View) {
+    fun onClickPasteFromClipboard(@Suppress("UNUSED_PARAMETER") aView: View) {
         val theClipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         var thePasteData = ""
 
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onClickClear(view: View) {
+    fun onClickClear(@Suppress("UNUSED_PARAMETER") aView: View) {
         val theEditText: EditText = text_input
         if (theEditText.text.isNotEmpty()) {
             val theDialog = AlertDialog.Builder(this).create().apply {

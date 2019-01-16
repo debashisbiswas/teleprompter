@@ -30,6 +30,7 @@
     <string name="pref_default_scroll_speed">8</string>
 
     <string name="pref_title_padding_switch">Enable padding around text</string>
+    <string name="pref_summary_padding_switch">Add empty lines before/after the text</string>
     <string name="pref_key_padding_switch">pref_key_padding_switch</string>
     <string name="pref_default_padding_switch">false</string>
 
@@ -49,15 +50,12 @@
 
     <string name="pref_title_font_size">Font Size</string>
     <string name="pref_key_font_size">pref_key_font_size</string>
-    <string-array name="pref_font_sizes_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-    <string name="pref_default_font_size">2</string>
+    <string name="pref_default_font_size">60</string>
     <string-array name="pref_font_sizes_labels">
+        <item>36</item>
+        <item>42</item>
+        <item>48</item>
+        <item>54</item>
         <item>60</item>
         <item>66</item>
         <item>72</item>
