@@ -29,6 +29,10 @@
     <string name="pref_max_scroll_speed">15</string>
     <string name="pref_default_scroll_speed">8</string>
 
+    <string name="pref_title_mirror_text">Mirror text</string>
+    <string name="pref_key_mirror_text">pref_key_mirror_text</string>
+    <string name="pref_default_mirror_text">false</string>
+
     <string name="pref_title_padding_switch">Enable padding around text</string>
     <string name="pref_summary_padding_switch">Add empty lines before/after the text</string>
     <string name="pref_key_padding_switch">pref_key_padding_switch</string>

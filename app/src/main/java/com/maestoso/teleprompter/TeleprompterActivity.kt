@@ -21,7 +21,7 @@ class TeleprompterActivity : AppCompatActivity() {
         val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val thePaddingEnabledSetting = theSharedPreferences.getBoolean(
                 getString(R.string.pref_key_padding_switch), false)
-        var theText = intent.extras.getString(resources.getString(R.string.user_string_extra_key))
+        var theText = intent.extras!!.getString(resources.getString(R.string.user_string_extra_key))
         if( thePaddingEnabledSetting )
         {
             val thePaddingAboveSetting = theSharedPreferences.getInt(
@@ -42,6 +42,14 @@ class TeleprompterActivity : AppCompatActivity() {
 
         text_view.textSize = theFontSizeSetting
         text_view.text = theText
+
+        val theTextMirrorSetting = theSharedPreferences.getBoolean(
+                getString(R.string.pref_key_mirror_text), false)
+
+        if( theTextMirrorSetting )
+        {
+            text_view.scaleX = -1f
+        }
     }
 
     fun beginScrolling(@Suppress("UNUSED_PARAMETER") aView: View) {

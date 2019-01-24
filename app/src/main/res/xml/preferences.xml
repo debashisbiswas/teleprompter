@@ -12,6 +12,11 @@
                 android:defaultValue="@string/pref_default_scroll_speed"/>
 
         <android.support.v7.preference.SwitchPreferenceCompat
+                android:title="@string/pref_title_mirror_text"
+                android:key="@string/pref_key_mirror_text"
+                android:defaultValue="@string/pref_default_mirror_text"/>
+
+        <android.support.v7.preference.SwitchPreferenceCompat
                 android:title="@string/pref_title_padding_switch"
                 android:key="@string/pref_key_padding_switch"
                 android:summary="@string/pref_summary_padding_switch"
