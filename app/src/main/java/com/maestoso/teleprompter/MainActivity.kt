@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -57,12 +58,17 @@ class MainActivity : AppCompatActivity() {
         var thePasteData = ""
 
         if (theClipboardManager.hasPrimaryClip()) {
-            val theItem = theClipboardManager.primaryClip.getItemAt(0)
-            thePasteData = theItem.text.toString()
+            val theItem = theClipboardManager.primaryClip?.getItemAt(0)
+            thePasteData = theItem?.text.toString()
         }
 
-        if (thePasteData.isNotEmpty()) {
+        if (thePasteData.isNotEmpty())
+        {
             text_input.setText(thePasteData)
+        }
+        else
+        {
+            Toast.makeText( this, R.string.clipboard_empty_toast_text, Toast.LENGTH_SHORT ).show()
         }
     }
 

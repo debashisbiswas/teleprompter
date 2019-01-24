@@ -3,6 +3,7 @@
     <string name="start">Begin</string>
     <string name="clipboard_paste_button_text">Replace with Clipboard</string>
     <string name="clear_button_text">Clear</string>
+    <string name="clipboard_empty_toast_text">Nothing in clipboard to paste!</string>
 
     <!-- Teleprompter Activity -->
     <string name="title_activity_teleprompter">Teleprompter</string>
