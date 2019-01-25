@@ -14,9 +14,9 @@ class TeleprompterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hideStatusBar()
         setContentView(R.layout.activity_teleprompter)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        hideStatusBar()
 
         val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val thePaddingEnabledSetting = theSharedPreferences.getBoolean(
@@ -50,6 +50,16 @@ class TeleprompterActivity : AppCompatActivity() {
         {
             text_view.scaleX = -1f
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        hideStatusBar()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        hideStatusBar()
     }
 
     fun beginScrolling(@Suppress("UNUSED_PARAMETER") aView: View) {
