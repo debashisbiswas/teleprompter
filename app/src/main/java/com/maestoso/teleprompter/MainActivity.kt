@@ -76,14 +76,13 @@ class MainActivity : AppCompatActivity() {
         val theEditText: EditText = text_input
         if (theEditText.text.isNotEmpty()) {
             val theDialog = AlertDialog.Builder(this).create().apply {
-                setTitle("Confirm")
-                setMessage("Are you sure you want to clear the text?")
-                setButton(AlertDialog.BUTTON_POSITIVE, "Yes") { _, _ -> theEditText.setText( "" ) }
-                setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel") { _, _ -> }
+                setTitle(getString(R.string.dialog_clear_title))
+                setMessage(getString(R.string.dialog_clear_confirmation))
+                setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.dialog_clear_positive)) { _, _ -> theEditText.setText( "" ) }
+                setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.dialog_clear_negative)) { _, _ -> }
             }
 
             theDialog.show()
-
         }
     }
 }

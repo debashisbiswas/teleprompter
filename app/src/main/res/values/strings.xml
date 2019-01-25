@@ -5,6 +5,11 @@
     <string name="clear_button_text">Clear</string>
     <string name="clipboard_empty_toast_text">Nothing in clipboard to paste!</string>
 
+    <string name="dialog_clear_title">Confirm</string>
+    <string name="dialog_clear_confirmation">Are you sure you want to clear the text?</string>
+    <string name="dialog_clear_positive">Yes</string>
+    <string name="dialog_clear_negative">Cancel</string>
+
     <!-- Teleprompter Activity -->
     <string name="title_activity_teleprompter">Teleprompter</string>
     <string name="placeholder">Lorem ipsum dolor sit amet consectetur adipiscing elit semper condimentum scelerisque sed, dui rhoncus quam platea velit tempor taciti turpis libero curabitur. Ut at fermentum vehicula erat libero sagittis nisl pulvinar inceptos egestas nisi fusce condimentum taciti, nunc rhoncus pharetra hendrerit convallis dictum duis curae gravida conubia lacinia proin eleifend. Proin a magna mus suscipit turpis primis elementum, dignissim aliquet iaculis integer commodo sociosqu, ridiculus et eu dui tristique auctor.</string>
@@ -56,6 +61,7 @@
     <string name="pref_title_font_size">Font Size</string>
     <string name="pref_key_font_size">pref_key_font_size</string>
     <string name="pref_default_font_size">60</string>
+
     <string-array name="pref_font_sizes_labels">
         <item>36</item>
         <item>42</item>
