@@ -1,5 +1,6 @@
 package com.maestoso.teleprompter
 
+import android.content.ClipDescription
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
@@ -57,7 +58,11 @@ class MainActivity : AppCompatActivity() {
         val theClipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         var thePasteData = ""
 
-        if (theClipboardManager.hasPrimaryClip()) {
+        if ( theClipboardManager.primaryClip != null
+                && theClipboardManager.primaryClipDescription != null
+                && theClipboardManager.hasPrimaryClip()
+                && theClipboardManager.primaryClipDescription!!.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN) )
+        {
             val theItem = theClipboardManager.primaryClip?.getItemAt(0)
             thePasteData = theItem?.text.toString()
         }
