@@ -1,6 +1,5 @@
 package com.maestoso.teleprompter
 
-import android.content.ClipDescription
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
@@ -14,8 +13,13 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
+    companion object
+    {
+        const val USER_SAVED_TEXT_FILENAME = "user_saved_text.dat"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         toolbar.inflateMenu(R.menu.menu_main)
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
+
+        val file = File( applicationContext.filesDir, USER_SAVED_TEXT_FILENAME )
+        if ( file.exists() )
+        {
+            text_input.setText( file.readText() )
+        }
 
         start_button.setOnClickListener {
             val intent = Intent(this, TeleprompterActivity::class.java)
@@ -53,6 +63,13 @@ class MainActivity : AppCompatActivity() {
         {
             text_input.textSize = resources.getDimension( R.dimen.default_font_preview_size )
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val file = File( applicationContext.filesDir, USER_SAVED_TEXT_FILENAME )
+        val userText = text_input.text.toString()
+        file.writeText( userText )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -16,6 +16,7 @@ class TeleprompterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teleprompter)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        scroll_view.keepScreenOn = true
         hideStatusBar()
 
         val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
@@ -70,6 +71,7 @@ class TeleprompterActivity : AppCompatActivity() {
 
         // for future reference: here's how this works
         // theMaxDelay is the slowest delay. The scroll bar's speed setting is subtracted from that
+        // this means as you increase the speed setting in the app, time between calls is reduced
         // higher speed setting -> less delay -> faster scroll
         // scrolling by 1 every call is unnecessarily demanding and causes skipping
         val theMaxDelay = 25
@@ -86,7 +88,7 @@ class TeleprompterActivity : AppCompatActivity() {
     }
 
     fun pauseScrolling(@Suppress("UNUSED_PARAMETER") aView: View) {
-        // removes all
+        // removes all, which will stop scrolling
         mHandler.removeCallbacksAndMessages(null)
 
         overlay.visibility = View.VISIBLE
