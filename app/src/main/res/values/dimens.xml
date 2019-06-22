@@ -1,4 +1,5 @@
 <resources>
     <dimen name="side_margin">16dp</dimen>
     <dimen name="tap_to_start_padding">8dp</dimen>
+    <dimen name="default_font_preview_size">14sp</dimen>
 </resources>

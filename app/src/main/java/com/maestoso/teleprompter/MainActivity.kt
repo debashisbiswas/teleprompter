@@ -11,7 +11,6 @@ import android.support.v7.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,15 +23,36 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.inflateMenu(R.menu.menu_main)
 
-        val theButton = findViewById<Button>(R.id.start_button)
-        theButton?.setOnClickListener {
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
+
+        start_button.setOnClickListener {
             val intent = Intent(this, TeleprompterActivity::class.java)
             val theUserString = text_input.text.toString()
             intent.putExtra(resources.getString(R.string.user_string_extra_key), theUserString)
             startActivity(intent)
         }
+    }
 
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
+    override fun onResume() {
+        super.onResume()
+        val theSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+
+        val theFontPreviewSetting = theSharedPreferences.getBoolean(
+                getString(R.string.pref_key_font_preview), false)
+
+        if( theFontPreviewSetting )
+        {
+            val theFontSizeSetting = theSharedPreferences.getString(
+                    getString(R.string.pref_key_font_size),
+                    getString(R.string.pref_default_font_size))!!
+                    .toFloat()
+
+            text_input.textSize = theFontSizeSetting
+        }
+        else
+        {
+            text_input.textSize = resources.getDimension( R.dimen.default_font_preview_size )
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

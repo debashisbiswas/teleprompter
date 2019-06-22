@@ -47,6 +47,10 @@
             android:defaultValue="@string/pref_default_font_size"
         />
 
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:title="@string/pref_title_font_preview"
+            android:key="@string/pref_key_font_preview"
+            android:defaultValue="@string/pref_default_font_preview"/>
 
     </android.support.v7.preference.PreferenceCategory>
 

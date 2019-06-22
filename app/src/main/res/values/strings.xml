@@ -6,7 +6,7 @@
     <string name="clipboard_empty_toast_text">Nothing in clipboard to paste!</string>
 
     <string name="dialog_clear_title">Confirm</string>
-    <string name="dialog_clear_confirmation">Are you sure you want to clear the text?</string>
+    <string name="dialog_clear_confirmation">Are you sure you want to clear?</string>
     <string name="dialog_clear_positive">Yes</string>
     <string name="dialog_clear_negative">Cancel</string>
 
@@ -61,6 +61,10 @@
     <string name="pref_title_font_size">Font Size</string>
     <string name="pref_key_font_size">pref_key_font_size</string>
     <string name="pref_default_font_size">60</string>
+
+    <string name="pref_title_font_preview">Preview font size on main screen</string>
+    <string name="pref_key_font_preview">pref_key_font_preview</string>
+    <string name="pref_default_font_preview">false</string>
 
     <string-array name="pref_font_sizes_labels">
         <item>36</item>

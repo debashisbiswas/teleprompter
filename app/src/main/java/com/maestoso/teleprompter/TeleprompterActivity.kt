@@ -37,7 +37,7 @@ class TeleprompterActivity : AppCompatActivity() {
 
         val theFontSizeSetting = theSharedPreferences.getString(
                 getString(R.string.pref_key_font_size),
-                getString(R.string.pref_default_font_size))
+                getString(R.string.pref_default_font_size))!!
                 .toFloat()
 
         text_view.textSize = theFontSizeSetting
