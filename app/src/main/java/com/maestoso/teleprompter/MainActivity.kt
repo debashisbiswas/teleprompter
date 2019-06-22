@@ -80,8 +80,7 @@ class MainActivity : AppCompatActivity() {
 
         if ( theClipboardManager.primaryClip != null
                 && theClipboardManager.primaryClipDescription != null
-                && theClipboardManager.hasPrimaryClip()
-                && theClipboardManager.primaryClipDescription!!.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN) )
+                && theClipboardManager.hasPrimaryClip() )
         {
             val theItem = theClipboardManager.primaryClip?.getItemAt(0)
             thePasteData = theItem?.text.toString()
@@ -89,7 +88,21 @@ class MainActivity : AppCompatActivity() {
 
         if (thePasteData.isNotEmpty())
         {
-            text_input.setText(thePasteData)
+            val theEditText: EditText = text_input
+            if (theEditText.text.isNotEmpty()) {
+                val theDialog = AlertDialog.Builder(this).create().apply {
+                    setTitle(getString(R.string.dialog_clipreplace_title))
+                    setMessage(getString(R.string.dialog_clipreplace_confirmation))
+                    setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.dialog_clipreplace_positive)) { _, _ -> theEditText.setText(thePasteData) }
+                    setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.dialog_clipreplace_negative)) { _, _ -> }
+                }
+
+                theDialog.show()
+            }
+            else
+            {
+                theEditText.setText(thePasteData)
+            }
         }
         else
         {
